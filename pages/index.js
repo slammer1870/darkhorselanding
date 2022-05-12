@@ -7,20 +7,29 @@ export default function Home() {
     <div>
       <section className="text-gray-600 body-font">
         <header className="text-gray-600 body-font">
-          <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-start">
+          <div className="container mx-auto flex flex-wrap p-5 items-center justify-between">
             <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
               <img src="darkBlack.png" className="w-14" />
             </a>
+            <button
+              type="button"
+              className=" text-center text-gray-700 uppercase font-light bg-[#FECE7E] border-0 py-2 px-4 focus:outline-none hover:bg-[#d6a551] text-lg"
+            >
+              Sign me up
+            </button>
           </div>
         </header>
       </section>
       <section className="text-gray-700 body-font">
         <div className="container mx-auto flex px-5 py-8 md:py-16 lg:py-24 md:flex-row flex-col items-center">
+          <h1 className="title-font lg:hidden sm:text-4xl mb-10 text-3xl font-medium text-gray-900">
+            Are you ready to be our next success story?
+          </h1>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 mb-10 md:mb-0">
             <Image src="/ro.jpg" width={720} height={600} objectFit="cover" />
           </div>
           <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center ">
-            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+            <h1 className="title-font hidden lg:block sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
               Are you ready to be our next success story?
             </h1>
             <p className="mb-8 leading-relaxed">
@@ -225,14 +234,14 @@ export default function Home() {
             </svg>
             <p className="leading-relaxed text-lg">
               Edison bulb retro cloud bread echo park, helvetica stumptown
-              taiyaki taxidermy 90&apos;s cronut +1 kinfolk. Single-origin coffee
-              ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut
-              adaptogen squid fanny pack vaporware. Man bun next level coloring
-              book skateboard four loko knausgaard. Kitsch keffiyeh master
-              cleanse direct trade indigo juice before they sold out gentrify
-              plaid gastropub normcore XOXO 90&apos;s pickled cindigo jean shorts.
-              Slow-carb next level shoindigoitch ethical authentic, yr scenester
-              sriracha forage franzen organic drinking vinegar.
+              taiyaki taxidermy 90&apos;s cronut +1 kinfolk. Single-origin
+              coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar
+              cronut adaptogen squid fanny pack vaporware. Man bun next level
+              coloring book skateboard four loko knausgaard. Kitsch keffiyeh
+              master cleanse direct trade indigo juice before they sold out
+              gentrify plaid gastropub normcore XOXO 90&apos;s pickled cindigo
+              jean shorts. Slow-carb next level shoindigoitch ethical authentic,
+              yr scenester sriracha forage franzen organic drinking vinegar.
             </p>
             <span className="inline-block h-1 w-10 rounded bg-[#FECE7E] mt-8 mb-6" />
             <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
