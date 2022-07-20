@@ -37,7 +37,7 @@ const Form = () => {
       }),
       {
         pending: "Loading...",
-        //success: "Your subscription has been created! 👌",
+        //success: "Your subscription has been created!👌",
         //error: "Subscription creation failed... 🤯",
       }
     );
