@@ -1,17 +1,33 @@
+import React, { useState } from "react";
+import TermsOfService from "../components/TermsOfService";
+
 import { toast } from "react-toastify";
 
-const LeadForm = (product) => {
-  console.log(product);
+import * as fbq from "../lib/fpixel";
+
+const Form = () => {
+  const [tos, setTos] = useState();
+
+  const handleTos = () => {
+    if (tos) {
+      setTos(false);
+    } else {
+      setTos(true);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    fbq.event("CompleteRegistration");
     const res = await toast.promise(
       fetch(`${process.env.NEXT_PUBLIC_API_URL}leads/`, {
         method: "POST",
         body: JSON.stringify({
           name: e.target.name.value,
           email: e.target.email.value,
+          phone_number: e.target.phone.value,
           status: "new",
-          product: product.product,
+          product: "Landing Page",
         }),
         credentials: "same-origin",
         headers: {
@@ -31,62 +47,89 @@ const LeadForm = (product) => {
 
     if (res.ok) {
       e.target.email.value = "";
+      e.target.phone.value = "";
       e.target.name.value = "";
       toast.success("Thank you for your submission, we will be in touch! 👌");
     } else {
       e.target.email.value = "";
+      e.target.phone.value = "";
       e.target.name.value = "";
       toast.warning(
         "It looks like you have already submitted your details previously!"
       );
     }
   };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <p className="mb-4 text-2xl font-medium text-gray-900">
-        Fill in your details below and we will take care of the rest.
-      </p>
-      <div className="-mx-3 mb-6 flex flex-wrap">
-        <div className="w-full px-3">
-          <label
-            className="mb-2 block text-xs font-bold uppercase tracking-wide text-gray-700"
-            htmlFor="grid-last-name"
-          >
-            Name
-          </label>
-          <input
-            className="block w-full appearance-none border border-gray-200 bg-gray-200 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
-            id="grid-last-name"
-            type="text"
-            name="name"
-            placeholder="Name"
-          />
-        </div>
+    <div
+      id="signup"
+      className="container mx-auto my-12 px-4 text-gray-900 md:my-20 md:flex md:items-center"
+    >
+      <div className="md:w-1/2 md:pr-12">
+        <h5 className="mb-8 text-3xl font-medium md:mb-4 lg:text-4xl">
+          Ready to get started?
+        </h5>
+        <p className="mb-4 text-gray-700 md:text-xl lg:text-2xl">
+          Enter your details and we will do the rest!
+        </p>
       </div>
-      <div className="-mx-3 mb-6 flex flex-wrap">
-        <div className="mb-2 w-full px-3">
-          <label
-            className="mb-2 block text-xs font-bold uppercase tracking-wide text-gray-700"
-            htmlFor="grid-password"
-          >
-            Email
-          </label>
-          <input
-            className="mb-3 block w-full appearance-none border border-gray-200 bg-gray-200 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
-            id="grid-password"
-            type="email"
-            name="email"
-            placeholder="Email"
-          />
-        </div>
-        <div className="flex w-full pr-4">
-          <button className="ml-auto bg-[#FECE7E] px-4 py-2 uppercase">
-            Learn More
+      <div className="rounded bg-gray-200 p-8 md:w-1/2">
+        <form className="" onSubmit={handleSubmit}>
+          <div className="relative mb-4">
+            <label className="font-medium">Full Name</label>
+            <input
+              type="text"
+              className="mt-2 w-full border border-gray-200 p-2"
+              name="name"
+              placeholder="Name"
+              required
+            ></input>
+          </div>
+          <div className="relative mb-4">
+            <label className="font-medium">
+              Phone Number <span className="text-gray-500">(optional)</span>
+            </label>
+            <input
+              type="phone"
+              className="mt-2 w-full border border-gray-200 p-2"
+              name="phone"
+              placeholder="Phone Number"
+            ></input>
+          </div>
+          <div className="relative mb-4">
+            <label className="font-medium">Email</label>
+            <input
+              type="email"
+              className="mt-2 w-full border border-gray-200 p-2"
+              name="email"
+              placeholder="Email"
+              required
+            ></input>
+          </div>
+
+          <div className="relative mb-4">
+            <input
+              type="checkbox"
+              id="gdpr"
+              name="gdpr"
+              className="mr-2"
+              required
+            />
+            <label className="mt-3 text-xs text-gray-500 lg:text-base">
+              I consent to Dark Horse Strength&apos;s{" "}
+              <span className="underline" onClick={handleTos}>
+                terms of service
+              </span>
+            </label>
+          </div>
+          <button className="w-full bg-purple-400 p-2 text-white">
+            Submit
           </button>
-        </div>
+        </form>
       </div>
-    </form>
+      {tos && <TermsOfService handleTos={handleTos} />}
+    </div>
   );
 };
 
-export default LeadForm;
+export default Form;

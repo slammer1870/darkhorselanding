@@ -1,110 +1,57 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+
+import Hero from "../components/Hero";
 import LeadForm from "../components/LeadForm";
+import Offer from "../components/Offer";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
   return (
     <div>
-      <section className="text-gray-600 body-font">
-        <header className="text-gray-600 body-font">
-          <div className="container mx-auto flex flex-wrap p-5 items-center justify-between">
-            <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-              <img src="darkBlack.png" className="w-14" />
-            </a>
-            <button
-              type="button"
-              className=" text-center text-gray-700 uppercase font-light bg-[#FECE7E] border-0 py-2 px-4 focus:outline-none hover:bg-[#d6a551] text-lg"
-            >
-              Sign me up
-            </button>
-          </div>
-        </header>
-      </section>
-      <section className="text-gray-700 body-font">
+      <Hero />
+      <section id="learnmore" className="text-gray-700 body-font">
         <div className="container mx-auto flex px-5 py-8 md:py-16 lg:py-24 md:flex-row flex-col items-center">
-          <h1 className="title-font lg:hidden sm:text-4xl mb-10 text-3xl font-medium text-gray-900">
+          <h1 className="mb-8 text-3xl md:mb-4 md:hidden">
             Are you ready to be our next success story?
           </h1>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 mb-10 md:mb-0">
             <Image src="/ro.jpg" width={720} height={600} objectFit="cover" />
           </div>
           <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center ">
-            <h1 className="title-font hidden lg:block sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+            <h1 className="mb-8 text-3xl md:mb-4 hidden md:block text-gray-900">
               Are you ready to be our next success story?
             </h1>
-            <p className="mb-8 leading-relaxed">
-              We will help you get healthy, lean, fit, strong, feel more
-              confident and we have the results to prove it. We have helped
-              hundreds of people like you transform their bodies time and time
-              again, regardless of their fitness level.
+            <p className="mb-4 text-gray-700 md:text-xl">
+              Fitness &amp; Training should be accessible to all and there’s a
+              plan and a method out there for everyone! Join our 30-Day
+              Kickstarter to get you heading in the right direction!
             </p>
             <div className="flex justify-center w-full max-w-screen-xs md:w-auto">
-              <button
-                type="button"
+              <a
+                href="#signup"
                 className=" text-center text-gray-700 uppercase font-light bg-[#FECE7E] border-0 py-2 px-6 focus:outline-none hover:bg-[#d6a551] text-lg w-full max-w-screen-sm"
               >
-                I want to get fit
-              </button>
+                Join our 30 day program{" "}
+              </a>
             </div>
           </div>
         </div>
       </section>
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-8 md:py-16 lg:py-24 mx-auto flex flex-wrap">
-          <div className="flex flex-wrap -mx-4 mt-auto mb-auto lg:w-1/2 sm:w-2/3 content-start sm:pr-10">
-            <div className="w-full sm:p-4 px-4 mb-6">
-              <h1 className="title-font font-medium text-xl mb-2 text-gray-900">
-                Moon hashtag pop-up try-hard offal truffaut
-              </h1>
-              <div className="leading-relaxed">
-                Pour-over craft beer pug drinking vinegar live-edge gastropub,
-                keytar neutra sustainable fingerstache kickstarter.
-              </div>
-            </div>
-            <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-              <h2 className="title-font font-medium text-3xl text-gray-900">
-                2.7K
-              </h2>
-              <p className="leading-relaxed">Users</p>
-            </div>
-            <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-              <h2 className="title-font font-medium text-3xl text-gray-900">
-                1.8K
-              </h2>
-              <p className="leading-relaxed">Subscribes</p>
-            </div>
-            <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-              <h2 className="title-font font-medium text-3xl text-gray-900">
-                35
-              </h2>
-              <p className="leading-relaxed">Downloads</p>
-            </div>
-            <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-              <h2 className="title-font font-medium text-3xl text-gray-900">
-                4
-              </h2>
-              <p className="leading-relaxed">Products</p>
-            </div>
-          </div>
-          <div className="lg:w-1/2 sm:w-1/3 w-full overflow-hidden mt-6 sm:mt-0">
-            <Image src="/gym.jpg" width={900} height={450} objectFit="cover" />
-          </div>
-          <section className="text-gray-600 body-font"></section>
-        </div>
-      </section>
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-8 md:py-16 lg:py-24 mx-auto">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font  text-gray-900 mb-20">
-            Raw Denim Heirloom Man Braid Selfies Wayfarers
-          </h1>
-          <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
-            <div className="p-4 md:w-1/3 flex">
-              <div className="w-12 h-12 inline-flex items-center justify-center rounded-full mb-4 flex-shrink-0">
+      <section className="text-gray-900 body-font">
+        <div className="container px-5 py-8 md:py-16 lg:py-24 mx-auto flex flex-wrap justify-start xl:justify-between items-end">
+          <div className="">
+            <h1 className="mb-8 text-gray-900 text-3xl md:mb-4 md:text-3xl lg:text-4xl">
+              After 30 days you will:
+            </h1>
+            <div className="flex items-center">
+              <div className="p-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 25.256 22.101"
-                  className="w-10"
+                  className="w-10 md:w-14"
                 >
                   <path
                     id="heart-pulse-solid"
@@ -113,78 +60,52 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <div className="flex-grow pl-6">
-                <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
-                  Shooting Stars
-                </h2>
-                <p className="leading-relaxed text-base">
-                  Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                  taxidermy. Gastropub indxgo juice poutine, ramps microdosing
-                  banh mi pug VHS try-hard ugh iceland kickstarter tumblr
-                  live-edge tilde.
-                </p>
-                <a className="mt-3 text-indigo-500 inline-flex items-center">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    viewBox="0 0 24 24"
-                    className="w-4 h-4 ml-2"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
+              <p className="mb-4 text-gray-900 md:text-2xl">Feel Better. </p>
             </div>
-            <div className="p-4 md:w-1/3 flex">
-              <div className="w-12 h-12 inline-flex items-center justify-center mb-4 flex-shrink-0">
+            <div className="flex items-center">
+              <div className="p-7">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 25.256 17.679"
-                  className="w-10"
+                  viewBox="0 0 25.256 36.732"
+                  className="w-8"
                 >
                   <path
-                    id="dumbbell-solid"
-                    d="M4.1,34.526H2.21a.949.949,0,0,0-.947.947v4.1A1.263,1.263,0,0,0,1.227,42.1l.036,4.1a.946.946,0,0,0,.947.947H4.1a.945.945,0,0,0,.947-.947V35.473A.947.947,0,0,0,4.1,34.526ZM17.995,32H16.1a.949.949,0,0,0-.947.947v6.63H10.1v-6.63A.946.946,0,0,0,9.155,32H7.261a.949.949,0,0,0-.947.947V48.732a.947.947,0,0,0,.947.947H9.155a.945.945,0,0,0,.947-.947V42.1h5.051v6.63a.947.947,0,0,0,.947.947h1.894a.947.947,0,0,0,.947-.947V32.947A.946.946,0,0,0,17.995,32Zm6,7.577v-4.1a.947.947,0,0,0-.947-.947H21.152a.95.95,0,0,0-.947.947V46.206a.947.947,0,0,0,.947.947h1.894a.947.947,0,0,0,.947-.947V42.1a1.263,1.263,0,1,0,0-2.526Z"
-                    transform="translate(0 -32)"
+                    id="child-reaching-solid"
+                    d="M33.212,4.592A4.592,4.592,0,1,1,28.621,0,4.593,4.593,0,0,1,33.212,4.592Zm-7.2,7.619a10.852,10.852,0,0,0,2.619.416,8.455,8.455,0,0,0,7.088-3.845l1.306-2a2.3,2.3,0,1,1,3.845,2.508l-1.3,1.994A13.065,13.065,0,0,1,34.36,15.9V34.436a2.3,2.3,0,0,1-4.592,0V27.549h-2.3v6.887a2.3,2.3,0,0,1-4.592,0V15.884a12.759,12.759,0,0,1-5.1-4.541l-1.4-2.03a2.3,2.3,0,1,1,3.82-2.55l1.4,2.1a8.483,8.483,0,0,0,4.217,3.286.939.939,0,0,1,.2.065Z"
+                    transform="translate(-15.994)"
                   />
                 </svg>
               </div>
-              <div className="flex-grow pl-6">
-                <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
-                  The Catalyzer
-                </h2>
-                <p className="leading-relaxed text-base">
-                  Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                  taxidermy. Gastropub indxgo juice poutine, ramps microdosing
-                  banh mi pug VHS try-hard ugh iceland kickstarter tumblr
-                  live-edge tilde.
-                </p>
-                <a className="mt-3 text-indigo-500 inline-flex items-center">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    viewBox="0 0 24 24"
-                    className="w-4 h-4 ml-2"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
+              <p className="mb-4 text-gray-900 md:text-2xl">
+                Feel Fitter &amp; Stronger{" "}
+              </p>
             </div>
-            <div className="p-4 md:w-1/3 flex">
-              <div className="w-12 h-12 inline-flex items-center justify-center mb-4 flex-shrink-0">
+            <div className="flex items-center">
+              <div className="p-6">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 25.256 25.258"
+                  className="w-10 md:w-14"
+                >
+                  <path
+                    id="medal-solid"
+                    d="M11.04,6.453,7.36.383A.671.671,0,0,0,6.728,0H.8A.789.789,0,0,0,.149,1.242L5.64,9.081A10.2,10.2,0,0,1,11.04,6.453Zm1.593,1.441a8.683,8.683,0,1,0,8.683,8.683A8.68,8.68,0,0,0,12.634,7.893Zm4.563,7.76-1.869,1.825.438,2.578a.564.564,0,0,1-.82.592l-2.313-1.215L10.32,20.646a.564.564,0,0,1-.82-.592l.438-2.578L8.069,15.651a.569.569,0,0,1,.317-.969l2.584-.376,1.155-2.342a.564.564,0,0,1,1.011,0L14.3,14.306l2.584.376A.568.568,0,0,1,17.2,15.653ZM24.429,0h-5.89a.789.789,0,0,0-.677.383L14.223,6.407a10.172,10.172,0,0,1,5.4,2.633L25.116,1.2A.77.77,0,0,0,24.429,0Z"
+                    transform="translate(-0.005)"
+                  />
+                </svg>
+              </div>
+              <p className="mb-4 text-gray-900 md:text-2xl">
+                Be Sleeping Better{" "}
+              </p>
+            </div>
+          </div>
+          <div className="mb-2">
+            <div className="flex items-center">
+              <div className="p-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 25.256 31.084"
-                  className="w-10"
+                  className="w-10 md:w-14"
                 >
                   <path
                     id="person-running-solid"
@@ -193,93 +114,54 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <div className="flex-grow pl-6">
-                <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
-                  Neptune
-                </h2>
-                <p className="leading-relaxed text-base">
-                  Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                  taxidermy. Gastropub indxgo juice poutine, ramps microdosing
-                  banh mi pug VHS try-hard ugh iceland kickstarter tumblr
-                  live-edge tilde.
-                </p>
-                <a className="mt-3 text-indigo-500 inline-flex items-center">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    viewBox="0 0 24 24"
-                    className="w-4 h-4 ml-2"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
+              <p className="mb-4 text-gray-900 md:text-2xl">
+                Be Feeling More Confident
+              </p>
+            </div>
+            <div className="flex items-center">
+              <div className="p-7">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 25.256 17.679"
+                  className="w-10 md:w-14"
+                >
+                  <path
+                    id="dumbbell-solid"
+                    d="M4.1,34.526H2.21a.949.949,0,0,0-.947.947v4.1A1.263,1.263,0,0,0,1.227,42.1l.036,4.1a.946.946,0,0,0,.947.947H4.1a.945.945,0,0,0,.947-.947V35.473A.947.947,0,0,0,4.1,34.526ZM17.995,32H16.1a.949.949,0,0,0-.947.947v6.63H10.1v-6.63A.946.946,0,0,0,9.155,32H7.261a.949.949,0,0,0-.947.947V48.732a.947.947,0,0,0,.947.947H9.155a.945.945,0,0,0,.947-.947V42.1h5.051v6.63a.947.947,0,0,0,.947.947h1.894a.947.947,0,0,0,.947-.947V32.947A.946.946,0,0,0,17.995,32Zm6,7.577v-4.1a.947.947,0,0,0-.947-.947H21.152a.95.95,0,0,0-.947.947V46.206a.947.947,0,0,0,.947.947h1.894a.947.947,0,0,0,.947-.947V42.1a1.263,1.263,0,1,0,0-2.526Z"
+                    transform="translate(0 -32)"
+                  />
+                </svg>
               </div>
+              <p className="mb-4 text-gray-900 md:text-2xl">Have More Energy</p>
+            </div>
+            <div className="flex items-center">
+              <div className="p-6">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 25.256 14.031"
+                  className="w-10 md:w-14"
+                >
+                  <path
+                    id="battery-half-solid"
+                    d="M12.628,105.822H4.209v-5.612h8.419ZM0,99.508A3.507,3.507,0,0,1,3.508,96H20.345a3.507,3.507,0,0,1,3.508,3.508v.7a1.4,1.4,0,0,1,1.4,1.4v2.806a1.4,1.4,0,0,1-1.4,1.4v.7a3.507,3.507,0,0,1-3.508,3.508H3.508A3.507,3.507,0,0,1,0,106.523Zm3.508-.7a.7.7,0,0,0-.7.7v7.015a.7.7,0,0,0,.7.7H20.345a.7.7,0,0,0,.7-.7V99.508a.7.7,0,0,0-.7-.7Z"
+                    transform="translate(0 -96)"
+                  />
+                </svg>
+              </div>
+              <p className="mb-4 text-gray-900 md:text-2xl">
+                Be Surrounded by a Supportive &amp; Like-Minded Community{" "}
+              </p>
             </div>
           </div>
         </div>
       </section>
+      <Offer />
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-8 md:py-16 lg:py-24 mx-auto">
-          <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto ">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 975.036 975.036"
-              className="inline-block w-8 h-8 text-gray-400 mb-8"
-            >
-              <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
-            </svg>
-            <p className="leading-relaxed text-lg">
-              Edison bulb retro cloud bread echo park, helvetica stumptown
-              taiyaki taxidermy 90&apos;s cronut +1 kinfolk. Single-origin
-              coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar
-              cronut adaptogen squid fanny pack vaporware. Man bun next level
-              coloring book skateboard four loko knausgaard. Kitsch keffiyeh
-              master cleanse direct trade indigo juice before they sold out
-              gentrify plaid gastropub normcore XOXO 90&apos;s pickled cindigo
-              jean shorts. Slow-carb next level shoindigoitch ethical authentic,
-              yr scenester sriracha forage franzen organic drinking vinegar.
-            </p>
-            <span className="inline-block h-1 w-10 rounded bg-[#FECE7E] mt-8 mb-6" />
-            <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
-              HOLDEN CAULFIELD
-            </h2>
-            <p className="text-gray-500">Senior Product Designer</p>
-          </div>
-        </div>
-      </section>
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-8 md:py-16 lg:py-24 mx-auto flex flex-wrap items-center">
-          <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
-            <h1 className="title-font font-medium text-3xl text-gray-900">
-              Slow-carb next level shoindcgoitch ethical authentic, poko
-              scenester
+          <div className="mb-8">
+            <h1 className="mb-8 text-gray-900 text-3xl md:mb-4 md:text-3xl lg:text-4xl">
+              What you will get{" "}
             </h1>
-            <p className="leading-relaxed mt-4">
-              Poke slow-carb mixtape knausgaard, typewriter street art gentrify
-              hammock starladder roathse. Craies vegan tousled etsy austin.
-            </p>
-          </div>
-          <div className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-            <LeadForm product="landing" />
-          </div>
-        </div>
-      </section>
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-8 md:py-16 lg:py-24 mx-auto">
-          <div className="mb-20">
-            <h1 className="sm:text-3xl text-2xl font-medium  title-font text-gray-900 mb-4">
-              Raw Denim Heirloom Man Braid
-            </h1>
-            <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4">
-              Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-              taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh
-              mi pug.
-            </p>
           </div>
           <div className="flex flex-wrap sm:mx-auto sm:mb-2 -mx-2">
             <div className="p-2 sm:w-1/2 w-full">
@@ -297,7 +179,7 @@ export default function Home() {
                   <path d="M22 4L12 14.01l-3-3" />
                 </svg>
                 <span className="title-font font-medium">
-                  Authentic Cliche Forage
+                  <strong>Unlimited</strong> Personal Training{" "}
                 </span>
               </div>
             </div>
@@ -316,7 +198,7 @@ export default function Home() {
                   <path d="M22 4L12 14.01l-3-3" />
                 </svg>
                 <span className="title-font font-medium">
-                  Kinfolk Chips Snackwave
+                  <strong>Unlimited</strong> Class Access{" "}
                 </span>
               </div>
             </div>
@@ -335,7 +217,7 @@ export default function Home() {
                   <path d="M22 4L12 14.01l-3-3" />
                 </svg>
                 <span className="title-font font-medium">
-                  Coloring Book Ethical
+                  Personal Goal Setting &amp; Strategy Session{" "}
                 </span>
               </div>
             </div>
@@ -354,7 +236,7 @@ export default function Home() {
                   <path d="M22 4L12 14.01l-3-3" />
                 </svg>
                 <span className="title-font font-medium">
-                  Typewriter Polaroid Cray
+                  Nutrition Support{" "}
                 </span>
               </div>
             </div>
@@ -372,9 +254,7 @@ export default function Home() {
                   <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
                   <path d="M22 4L12 14.01l-3-3" />
                 </svg>
-                <span className="title-font font-medium">
-                  Pack Truffaut Blue
-                </span>
+                <span className="title-font font-medium">Expert Guidance</span>
               </div>
             </div>
             <div className="p-2 sm:w-1/2 w-full">
@@ -391,18 +271,15 @@ export default function Home() {
                   <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
                   <path d="M22 4L12 14.01l-3-3" />
                 </svg>
-                <span className="title-font font-medium">
-                  The Catcher In The Rye
+                <span className="title-font font-medium underline">
+                  Everything you need to move forward with your journey!{" "}
                 </span>
               </div>
             </div>
           </div>
-          <button className="flex mx-auto mt-16 text-white bg-[#FECE7E] border-0 py-2 px-8 focus:outline-none hover:bg-[#d6a551] rounded text-lg">
-            Button
-          </button>
         </div>
       </section>
-
+      <LeadForm product="landing" />
       <section>
         <footer className="body-font text-gray-600">
           <div className="container mx-auto flex flex-col items-center px-5 py-8 sm:flex-row">
@@ -412,66 +289,17 @@ export default function Home() {
             <p className="mt-4 text-sm text-gray-500 sm:ml-4 sm:mt-0 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:pl-4">
               © {new Date().getFullYear()} Dark Horse Strength and Performance
             </p>
-            <span className="mt-4 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
-              <a className="text-gray-500">
-                <svg
-                  fill="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="h-5 w-5"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                </svg>
-              </a>
-              <a className="ml-3 text-gray-500">
-                <svg
-                  fill="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="h-5 w-5"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                </svg>
-              </a>
-              <a className="ml-3 text-gray-500">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="h-5 w-5"
-                  viewBox="0 0 24 24"
-                >
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                </svg>
-              </a>
-              <a className="ml-3 text-gray-500">
-                <svg
-                  fill="currentColor"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="0"
-                  className="h-5 w-5"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="none"
-                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                  ></path>
-                  <circle cx="4" cy="4" r="2" stroke="none"></circle>
-                </svg>
-              </a>
-            </span>
           </div>
         </footer>
       </section>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        pauseOnFocusLoss={false}
+        closeOnClick
+      />
     </div>
   );
 }
