@@ -8,9 +8,24 @@ import Offer from "../components/Offer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import Script from "next/script";
+
 export default function Home() {
   return (
     <div>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=UA-235369179-1"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-235369179-1');
+        `}
+      </Script>
       <Hero />
       <section id="learnmore" className="text-gray-700 body-font">
         <div className="container mx-auto flex px-5 py-8 md:py-16 lg:py-24 md:flex-row flex-col items-center">
@@ -25,9 +40,12 @@ export default function Home() {
               Are you ready for a change
             </h1>
             <p className="mb-4 text-gray-700 md:text-xl">
-              Fitness &amp; Training should be accessible to all and there’s a
-              plan and a method out there for everyone! Join our 30-Day
-              Kickstarter to get you heading in the right direction!
+              Health and fitness should be accessible to all, and here at Dark
+              Horse Strength &apm; Performance we believe we have found an
+              effective, efficient solution to training that integrates into
+              your lifestyle in a way that makes sense. No 6 week
+              transformations or crash diets - effective information, in a
+              professional setting.
             </p>
             <div className="flex justify-center w-full max-w-screen-xs md:w-auto">
               <a
@@ -47,7 +65,42 @@ export default function Home() {
               After 30 days you will:
             </h1>
             <div className="flex items-center">
-              <div className="p-6">
+              <div className="p-6  w-24 md:w-36">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 25.256 31.084"
+                  className="w-10 md:w-14"
+                >
+                  <path
+                    id="person-running-solid"
+                    d="M39.313,13.6H36.642l-1.586-3.233a5.838,5.838,0,0,0-3.749-3.1L26.989,5.988a6.224,6.224,0,0,0-1.366-.161,5.807,5.807,0,0,0-3.537,1.2L19.673,8.882a1.942,1.942,0,0,0,2.368,3.078l2.406-1.844A2,2,0,0,1,25.632,9.7a1.533,1.533,0,0,1,.355.04l.888.258L24.6,15.314a3.77,3.77,0,0,0-.311,1.515A3.9,3.9,0,0,0,26.2,20.186l5.16,3.043-1.67,5.327a1.945,1.945,0,0,0,1.275,2.436,1.9,1.9,0,0,0,.576.091,1.937,1.937,0,0,0,1.852-1.366l1.928-6.132a2.88,2.88,0,0,0,.109-.785A2.94,2.94,0,0,0,34,20.285l-3.711-2.193,1.9-4.759,1.229,2.52a2.931,2.931,0,0,0,2.564,1.631h3.333a1.943,1.943,0,0,0,0-3.886Zm-6.8-7.771A2.914,2.914,0,1,0,29.6,2.914,2.915,2.915,0,0,0,32.513,5.828Zm-9.6,13.447L22,21.37H17.943a1.943,1.943,0,1,0,0,3.885h4.705a2.9,2.9,0,0,0,2.671-1.768l.539-1.245-.653-.379A5.731,5.731,0,0,1,22.909,19.276Z"
+                    transform="translate(-16)"
+                  />
+                </svg>
+              </div>
+
+              <p className="mb-4 text-gray-900 md:text-2xl">Feel Better. </p>
+            </div>
+            <div className="flex items-center">
+              <div className="p-6 w-24 md:w-36">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 25.256 17.679"
+                  className="w-10 md:w-14"
+                >
+                  <path
+                    id="dumbbell-solid"
+                    d="M4.1,34.526H2.21a.949.949,0,0,0-.947.947v4.1A1.263,1.263,0,0,0,1.227,42.1l.036,4.1a.946.946,0,0,0,.947.947H4.1a.945.945,0,0,0,.947-.947V35.473A.947.947,0,0,0,4.1,34.526ZM17.995,32H16.1a.949.949,0,0,0-.947.947v6.63H10.1v-6.63A.946.946,0,0,0,9.155,32H7.261a.949.949,0,0,0-.947.947V48.732a.947.947,0,0,0,.947.947H9.155a.945.945,0,0,0,.947-.947V42.1h5.051v6.63a.947.947,0,0,0,.947.947h1.894a.947.947,0,0,0,.947-.947V32.947A.946.946,0,0,0,17.995,32Zm6,7.577v-4.1a.947.947,0,0,0-.947-.947H21.152a.95.95,0,0,0-.947.947V46.206a.947.947,0,0,0,.947.947h1.894a.947.947,0,0,0,.947-.947V42.1a1.263,1.263,0,1,0,0-2.526Z"
+                    transform="translate(0 -32)"
+                  />
+                </svg>
+              </div>
+              <p className="mb-4 text-gray-900 md:text-2xl">
+                Feel Fitter &amp; Stronger{" "}
+              </p>
+            </div>
+            <div className="flex items-center">
+              <div className="p-6  w-24 md:w-36">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 25.256 22.101"
@@ -60,28 +113,14 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <p className="mb-4 text-gray-900 md:text-2xl">Feel Better. </p>
-            </div>
-            <div className="flex items-center">
-              <div className="p-7">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 25.256 36.732"
-                  className="w-8"
-                >
-                  <path
-                    id="child-reaching-solid"
-                    d="M33.212,4.592A4.592,4.592,0,1,1,28.621,0,4.593,4.593,0,0,1,33.212,4.592Zm-7.2,7.619a10.852,10.852,0,0,0,2.619.416,8.455,8.455,0,0,0,7.088-3.845l1.306-2a2.3,2.3,0,1,1,3.845,2.508l-1.3,1.994A13.065,13.065,0,0,1,34.36,15.9V34.436a2.3,2.3,0,0,1-4.592,0V27.549h-2.3v6.887a2.3,2.3,0,0,1-4.592,0V15.884a12.759,12.759,0,0,1-5.1-4.541l-1.4-2.03a2.3,2.3,0,1,1,3.82-2.55l1.4,2.1a8.483,8.483,0,0,0,4.217,3.286.939.939,0,0,1,.2.065Z"
-                    transform="translate(-15.994)"
-                  />
-                </svg>
-              </div>
               <p className="mb-4 text-gray-900 md:text-2xl">
-                Feel Fitter &amp; Stronger{" "}
+                Be Sleeping Better{" "}
               </p>
             </div>
-            <div className="flex items-center">
-              <div className="p-6">
+          </div>
+          <div className="mb-2">
+            <div className="flex items-center justify-start">
+              <div className="p-6  w-24 md:w-36">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 25.256 25.258"
@@ -95,47 +134,11 @@ export default function Home() {
                 </svg>
               </div>
               <p className="mb-4 text-gray-900 md:text-2xl">
-                Be Sleeping Better{" "}
-              </p>
-            </div>
-          </div>
-          <div className="mb-2">
-            <div className="flex items-center">
-              <div className="p-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 25.256 31.084"
-                  className="w-10 md:w-14"
-                >
-                  <path
-                    id="person-running-solid"
-                    d="M39.313,13.6H36.642l-1.586-3.233a5.838,5.838,0,0,0-3.749-3.1L26.989,5.988a6.224,6.224,0,0,0-1.366-.161,5.807,5.807,0,0,0-3.537,1.2L19.673,8.882a1.942,1.942,0,0,0,2.368,3.078l2.406-1.844A2,2,0,0,1,25.632,9.7a1.533,1.533,0,0,1,.355.04l.888.258L24.6,15.314a3.77,3.77,0,0,0-.311,1.515A3.9,3.9,0,0,0,26.2,20.186l5.16,3.043-1.67,5.327a1.945,1.945,0,0,0,1.275,2.436,1.9,1.9,0,0,0,.576.091,1.937,1.937,0,0,0,1.852-1.366l1.928-6.132a2.88,2.88,0,0,0,.109-.785A2.94,2.94,0,0,0,34,20.285l-3.711-2.193,1.9-4.759,1.229,2.52a2.931,2.931,0,0,0,2.564,1.631h3.333a1.943,1.943,0,0,0,0-3.886Zm-6.8-7.771A2.914,2.914,0,1,0,29.6,2.914,2.915,2.915,0,0,0,32.513,5.828Zm-9.6,13.447L22,21.37H17.943a1.943,1.943,0,1,0,0,3.885h4.705a2.9,2.9,0,0,0,2.671-1.768l.539-1.245-.653-.379A5.731,5.731,0,0,1,22.909,19.276Z"
-                    transform="translate(-16)"
-                  />
-                </svg>
-              </div>
-              <p className="mb-4 text-gray-900 md:text-2xl">
                 Be Feeling More Confident
               </p>
             </div>
             <div className="flex items-center">
-              <div className="p-7">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 25.256 17.679"
-                  className="w-10 md:w-14"
-                >
-                  <path
-                    id="dumbbell-solid"
-                    d="M4.1,34.526H2.21a.949.949,0,0,0-.947.947v4.1A1.263,1.263,0,0,0,1.227,42.1l.036,4.1a.946.946,0,0,0,.947.947H4.1a.945.945,0,0,0,.947-.947V35.473A.947.947,0,0,0,4.1,34.526ZM17.995,32H16.1a.949.949,0,0,0-.947.947v6.63H10.1v-6.63A.946.946,0,0,0,9.155,32H7.261a.949.949,0,0,0-.947.947V48.732a.947.947,0,0,0,.947.947H9.155a.945.945,0,0,0,.947-.947V42.1h5.051v6.63a.947.947,0,0,0,.947.947h1.894a.947.947,0,0,0,.947-.947V32.947A.946.946,0,0,0,17.995,32Zm6,7.577v-4.1a.947.947,0,0,0-.947-.947H21.152a.95.95,0,0,0-.947.947V46.206a.947.947,0,0,0,.947.947h1.894a.947.947,0,0,0,.947-.947V42.1a1.263,1.263,0,1,0,0-2.526Z"
-                    transform="translate(0 -32)"
-                  />
-                </svg>
-              </div>
-              <p className="mb-4 text-gray-900 md:text-2xl">Have More Energy</p>
-            </div>
-            <div className="flex items-center">
-              <div className="p-6">
+              <div className="p-6  w-24 md:w-36">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 25.256 14.031"
@@ -148,7 +151,23 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <p className="mb-4 text-gray-900 md:text-2xl">
+              <p className="mb-4 text-gray-900 md:text-2xl">Have More Energy</p>
+            </div>
+            <div className="flex items-center">
+              <div className="p-6 w-24 md:w-36">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 25.256 36.732"
+                  className="w-10 h-12 md:w-14 md:h-14"
+                >
+                  <path
+                    id="child-reaching-solid"
+                    d="M33.212,4.592A4.592,4.592,0,1,1,28.621,0,4.593,4.593,0,0,1,33.212,4.592Zm-7.2,7.619a10.852,10.852,0,0,0,2.619.416,8.455,8.455,0,0,0,7.088-3.845l1.306-2a2.3,2.3,0,1,1,3.845,2.508l-1.3,1.994A13.065,13.065,0,0,1,34.36,15.9V34.436a2.3,2.3,0,0,1-4.592,0V27.549h-2.3v6.887a2.3,2.3,0,0,1-4.592,0V15.884a12.759,12.759,0,0,1-5.1-4.541l-1.4-2.03a2.3,2.3,0,1,1,3.82-2.55l1.4,2.1a8.483,8.483,0,0,0,4.217,3.286.939.939,0,0,1,.2.065Z"
+                    transform="translate(-15.994)"
+                  />
+                </svg>
+              </div>
+              <p className="mb-4 text-gray-900 md:text-2xl pl-2 md:pl-0">
                 Be Surrounded by a Supportive &amp; Like-Minded Community{" "}
               </p>
             </div>
