@@ -22,7 +22,7 @@ export default function Home() {
           </div>
           <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center ">
             <h1 className="mb-8 text-3xl md:mb-4 hidden md:block text-gray-900">
-              Are you ready to be our next success story?
+              Are you ready for a change
             </h1>
             <p className="mb-4 text-gray-700 md:text-xl">
               Fitness &amp; Training should be accessible to all and there’s a
@@ -34,7 +34,7 @@ export default function Home() {
                 href="#signup"
                 className=" text-center text-gray-700 uppercase font-light bg-[#FECE7E] border-0 py-2 px-6 focus:outline-none hover:bg-[#d6a551] text-lg w-full max-w-screen-sm"
               >
-                Join our 30 day program{" "}
+                Join our 30 day trial
               </a>
             </div>
           </div>
