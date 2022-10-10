@@ -10,7 +10,13 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Script from "next/script";
 
+import Consent from "../components/Consent";
+
+import { getCookie } from "cookies-next";
+
 export default function Home() {
+  const consent = getCookie("localConsent");
+
   return (
     <div>
       <Script
@@ -21,11 +27,29 @@ export default function Home() {
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+          });
           gtag('js', new Date());
         
           gtag('config', 'UA-235369179-1');
         `}
       </Script>
+      {consent === true && (
+        <Script
+          id="consupd"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            gtag('consent', 'update', {
+              'ad_storage': 'granted',
+              'analytics_storage': 'granted'
+            });
+          `,
+          }}
+        />
+      )}
       <Hero />
       <section id="learnmore" className="text-gray-700 body-font">
         <div className="container mx-auto flex px-5 py-8 md:py-16 lg:py-24 md:flex-row flex-col items-center">
@@ -319,6 +343,7 @@ export default function Home() {
         pauseOnFocusLoss={false}
         closeOnClick
       />
+      <Consent />
     </div>
   );
 }
