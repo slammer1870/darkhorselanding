@@ -54,18 +54,18 @@ export default function Home() {
       <section id="learnmore" className="text-gray-700 body-font">
         <div className="container mx-auto flex px-5 py-8 md:py-16 lg:py-24 md:flex-row flex-col items-center">
           <h1 className="mb-8 text-3xl md:mb-4 md:hidden">
-            Are you ready to be our next success story?
+            Are you ready for a change?
           </h1>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 mb-10 md:mb-0">
             <Image src="/ro.jpg" width={720} height={600} objectFit="cover" />
           </div>
           <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center ">
             <h1 className="mb-8 text-3xl md:mb-4 hidden md:block text-gray-900">
-              Are you ready for a change
+              Are you ready for a change?
             </h1>
             <p className="mb-4 text-gray-700 md:text-xl">
               Health and fitness should be accessible to all, and here at Dark
-              Horse Strength &apm; Performance we believe we have found an
+              Horse Strength &amp; Performance we believe we have found an
               effective, efficient solution to training that integrates into
               your lifestyle in a way that makes sense. No 6 week
               transformations or crash diets - effective information, in a
